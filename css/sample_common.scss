@@ -1,0 +1,114 @@
+@charset "utf-8";
+// max-width: 550px
+@mixin fontsize($size: 24, $base: 10) {
+    font-size: $size + px;
+    font-size: ($size / $base) * 1rem;
+}
+
+$ja_font: "ヒラギノ角ゴ Pro W3",
+"Hiragino Kaku Gothic Pro",
+メイリオ,
+Verdana,
+"ＭＳ Ｐゴシック",
+sans-serif;
+$blue1: #42b9d0;
+$blue2: #339fd1;
+$gray_blue: #eaf2f4;
+#sub_cover {
+    text-align: center;
+    padding: 40px 0;
+    //retina_bg
+    background-image: url("../images/common/sub_cover.jpg");
+    background-size: cover;
+    @media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+        background-image: url("../images/common/sub_cover@2x.jpg");
+    }
+    @media (min-width: 550px) {
+        padding: 80px;
+    }
+    h2 {
+        color: white;
+        font-size: 1.6rem;
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+        display: block;
+        margin: 0;
+        @media (min-width: 551px) {
+            font-size: 3.2rem;
+        }
+    }
+}
+
+#contents {
+    padding-top: 20px;
+    @media(min-width: 551px) {
+        padding-top: 35px;
+        padding-bottom: 70px;
+    }
+    #main {
+        h2 {
+            color: $blue1;
+            border-bottom: 3px solid $blue1;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding-bottom: 15px;
+            @media(min-width: 551px) {
+                font-size: 2rem;
+                padding-bottom: 20px;
+            }
+        }
+        h2.company_tit {
+            margin-bottom: 0;
+        }
+        #news_area {
+            background-color: #fff;
+        }
+        table {
+            th {
+                padding-right: 20px;
+                color: #626262;
+                font-size: 1.4rem;
+                padding: 20px 0;
+            }
+            td {
+                color: #626262;
+                font-size: 1.4rem;
+                padding: 20px 0;
+            }
+        }
+    }
+    .side_menu {
+        padding-bottom: 20px;
+        .pc_sidemenu {
+            @media(max-width: 550px) {
+                display: none;
+            }
+            h3 {
+                color: $blue1;
+                background-color: #f3f9fb;
+                font-size: 1.4rem;
+                letter-spacing: 0.2rem;
+                font-weight: bold;
+                padding: 15px;
+                margin: 0;
+            }
+            li {
+                list-style: none;
+                display: block;
+                border-bottom: 1px solid #e5e5e5;
+                margin-bottom: 0;
+                padding: 10px 10px 10px 20px;
+                &:before {
+                    content: url(../images/common/side_arrow.png);
+                    display: inline-block;
+                    position: relative;
+                    left: -10px;
+                    top: -1px;
+                }
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
